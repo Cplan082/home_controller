@@ -25,7 +25,7 @@ client.connect(username='your_username', pkey=private_key)
 channel = client.open_channel('session')
 
 # Specify the path where you want to save the received file
-received_file_path = '/path/to/save/received_file.csv'
+received_file_path = './data/test.csv'
 
 # Receive the file and save it
 with open(received_file_path, 'wb') as received_file:

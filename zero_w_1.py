@@ -33,7 +33,7 @@ print(f"Accepted connection from {addr}")
 channel = client.open_channel('session')
 
 # Specify the path to the file you want to send
-file_path = '/path/to/your/' + fname_csv
+file_path = './data/' + fname_csv
 
 # Read the file and send its contents
 with open(file_path, 'rb') as file:
