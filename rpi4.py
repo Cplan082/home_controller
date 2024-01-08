@@ -8,7 +8,7 @@ Created on Mon Jan  8 01:01:06 2024
 import paramiko
 
 # Client configuration
-host = '10.0.198'  # Replace with the actual IP address of the Raspberry Pi Zero W
+host = '10.0.112'  # Replace with the actual IP address of the Raspberry Pi Zero W
 port = 12345
 
 # Create an SSH client
