@@ -14,7 +14,7 @@ port = 12345
 client = paramiko.Transport((host, port))
 
 # Load your private key (replace 'private_key_path' with the actual path)
-private_key_path = '~/.ssh/id_rsa'
+private_key_path = '/home/clive_w2/.ssh/id_rsa'  # Update this path
 private_key = paramiko.RSAKey(filename=private_key_path)
 
 # Connect to the server
