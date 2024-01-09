@@ -8,7 +8,7 @@ import paramiko
 
 # Client configuration
 host = '10.0.112'  # Replace with the actual IP address of the Raspberry Pi Zero W
-port = 12345
+port = 22
 
 # Create an SSH client
 client = paramiko.Transport((host, port))

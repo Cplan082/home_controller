@@ -9,7 +9,7 @@ import paramiko
 
 # Server configuration
 host = '10.0.0.159'  # Replace with the actual IP address of the Raspberry Pi 4
-port = 12345
+port = 22
 
 # Create an SSH server
 server = paramiko.Transport((host, port))
