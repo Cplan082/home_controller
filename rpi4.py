@@ -13,13 +13,16 @@ port = 22
 
 # Create an SSH server
 server = paramiko.Transport((host, port))
+print("server created\n")
 
 # Load your private key (replace 'private_key_path' with the actual path)
 private_key_path = '/home/clive/.ssh/id_rsa'  # Update this path
 private_key = paramiko.RSAKey(filename=private_key_path)
+print("private key created\n")
 
 # Start the server and wait for a connection
 server.add_server_key(private_key)
+print("server added")
 server.start_server()
 
 print(f"Server listening on {host}:{port}")
