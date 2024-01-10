@@ -12,10 +12,13 @@ print("Server waiting for connection...")
 client_socket, client_info = server_socket.accept()
 print(f"Accepted connection from {client_info}")
 
-# Send a string to the client
-message_to_send = "Hello, this is the server!"
-client_socket.send(message_to_send.encode('utf-8'))
+try:
+    # Send a string to the client
+    button_press = input("Press a button: ")
+    print("\n")
+    client_socket.send(button_press.encode('utf-8'))
 
-# Close the connection
-client_socket.close()
-server_socket.close()
+finally:
+    # Close the connection
+    client_socket.close()
+    server_socket.close()
