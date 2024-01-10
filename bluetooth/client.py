@@ -1,4 +1,5 @@
 import bluetooth
+import pickle
 
 # Client configuration
 client_socket = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
@@ -7,9 +8,22 @@ port = 1
 
 client_socket.connect((server_address, port))
 
-# Receive the string from the server
-received_data = client_socket.recv(1024).decode('utf-8')
-print(f"Received: {received_data}")
+try:
+    while True:
+        # Receive motor speeds data from the server
+        serialized_data = client_socket.recv(1024)
+        if not serialized_data:
+            break
 
-# Close the connection
-client_socket.close()
+        # Deserialize the received data
+        motor_speeds = pickle.loads(serialized_data)
+
+        # Process the received motor speeds data
+        print(f"Received Motor Speeds: {motor_speeds}")
+
+except KeyboardInterrupt:
+    print("Client terminated by user.")
+
+finally:
+    # Close the connection
+    client_socket.close()
