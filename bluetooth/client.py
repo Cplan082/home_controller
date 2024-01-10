@@ -2,7 +2,7 @@ import bluetooth
 
 # Client configuration
 client_socket = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
-server_address = "server_rpi_address"
+server_address = "DC:A6:32:9C:1C:F5" # RPI4's bluetooth Address
 port = 1
 
 client_socket.connect((server_address, port))
