@@ -12,7 +12,7 @@ controller.init()
 
 # Define tank motor pins or functions
 # Replace these with your actual motor control logic
-def move_tank(x, y):
+def displayTxData(x, y):
     # Adjust motor control logic based on xy coordinates
     # Example: Drive forward if y > 0, backward if y < 0
     # Turn left if x < 0, turn right if x > 0
@@ -41,13 +41,13 @@ try:
                 elif event.axis == 1:  # Left thumbstick y-axis
                     y = event.value
 
-        move_tank(x, y)
+        displayTxData(x, y)
 
         # Prepare motor speeds as a dictionary
-        motor_speeds = {'left_motor': x, 'right_motor': y}
+        data_joyStick = {'x_axis': x, 'y_axis': y}
 
         # Serialize the data and send it to the client
-        serialized_data = pickle.dumps(motor_speeds)
+        serialized_data = pickle.dumps(data_joyStick)
         client_socket.send(serialized_data)
 
         time.sleep(0.1)  # Adjust delay as needed

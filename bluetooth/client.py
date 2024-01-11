@@ -1,5 +1,6 @@
 import bluetooth
 import pickle
+import RPi.GPIO as GPIO
 
 # Client configuration
 client_socket = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
@@ -16,10 +17,14 @@ try:
             break
 
         # Deserialize the received data
-        motor_speeds = pickle.loads(serialized_data)
+        data_joyStick = pickle.loads(serialized_data)
+        x = data_joyStick['x_axis']
+        y = data_joyStick['y_axis']
 
         # Process the received motor speeds data
-        print(f"Received Motor Speeds: {motor_speeds}")
+        print(f"Received Joystick Info: \n")
+        print(f"\tX-Axis: {x}\n")
+        print(f"\tY-Axis: {y}\n\n")
 
 except KeyboardInterrupt:
     print("Client terminated by user.")
