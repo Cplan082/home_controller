@@ -3,7 +3,7 @@ import pickle
 import pigpio
 
 
-gpio_pin = 12
+gpio_pin = 18
 pwm_freq = int(1e6)
 
 # Client configuration
