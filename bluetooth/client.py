@@ -4,7 +4,7 @@ import pigpio
 
 
 gpio_pin = 12
-pwm_freq = 1e6
+pwm_freq = int(1e6)
 
 # Client configuration
 client_socket = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
