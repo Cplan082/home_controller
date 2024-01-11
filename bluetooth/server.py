@@ -31,6 +31,8 @@ client_socket, client_info = server_socket.accept()
 print(f"Accepted connection from {client_info}")
 
 try:
+    x = 0
+    y = 0
     while True:
         for event in pygame.event.get():
             if event.type == pygame.JOYAXISMOTION:
