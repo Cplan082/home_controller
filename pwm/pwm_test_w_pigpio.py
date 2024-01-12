@@ -14,14 +14,29 @@ if not pi.connected:
     exit()
 
 gpio_pin = 18  # Replace with the GPIO pin you want to use
-frequency = 1000  # Set the PWM frequency in Hz
-duty_cycle = 500000  # Set the PWM duty cycle (0 to 1000000)
-
-pi.hardware_PWM(gpio_pin, frequency, duty_cycle)
+# frequency = 1000  # Set the PWM frequency in Hz
+# duty_cycle = 500000  # Set the PWM duty cycle (0 to 1000000)
 
 try:
     while True:
-        time.sleep(1)
+        frequency = int(input("Enter a frequency: "))
+        duty_cycle = int(input("\nEnter a Duty cycle: "))
+        
+        if frequency > 1e7:
+            frequency = int(1e6)
+        elif frequency < 0:
+            frequency = 0
+        
+        if duty_cycle > 100:
+            duty_cycle = 100
+        elif duty_cycle < 0:
+            duty_cycle = 0
+        
+        duty_cycle = int(duty_cycle*10000)
+            
+        
+            
+        pi.hardware_PWM(gpio_pin, frequency, duty_cycle)
 
 except KeyboardInterrupt:
     pi.set_mode(gpio_pin, pigpio.INPUT)  # Set the GPIO pin back to INPUT mode
