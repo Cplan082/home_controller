@@ -25,14 +25,17 @@ try:
         if frequency > 1e7:
             frequency = int(1e6)
         elif frequency < 0:
-            frequency = 0
+            frequency = frequency_prev
         
-        if duty_cycle > 100:
-            duty_cycle = 100
+        if duty_cycle > 1:
+            duty_cycle = 1
         elif duty_cycle < 0:
-            duty_cycle = 0
+            duty_cycle = duty_cycle_prev
+            
+        duty_cycle_prev = duty_cycle
+        frequency_prev = frequency
         
-        duty_cycle = int(duty_cycle*10000)
+        duty_cycle = int(duty_cycle*1000000)
             
         
             
