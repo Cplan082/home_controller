@@ -3,7 +3,7 @@ import pickle
 import pigpio
 
 
-gpio_pin = 18
+gpio_pin = 18 # only GPIO 18 and 19 are supported on RPi zero W
 pwm_freq = int(1e6)
 
 # Client configuration
