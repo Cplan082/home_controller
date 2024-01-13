@@ -48,6 +48,7 @@ try:
         x = data_joyStick['x_axis']
         y = data_joyStick['y_axis']
         mapped_y2pwm = data_joyStick['servoPwm_yAxis']
+        print(f"y type = {type(y)}")
         servo1.driveServo(y)
         # pi.hardware_PWM(gpio_pin, pwm_freq, mapped_y2pwm)
         
