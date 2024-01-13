@@ -2,6 +2,7 @@ import pygame
 import pickle
 import bluetooth
 import time
+from ..common import common as cm
 
 # Initialize pygame
 pygame.init()
@@ -22,27 +23,27 @@ def displayTxData(x, y):
     # Turn left if x < 0, turn right if x > 0
     print(f"X: {x}, Y: {y}")
     
-def map_value(value, old_min, old_max, new_min, new_max):
-    """
-    Map a value from one range to another using linear mapping.
+# def map_value(value, old_min, old_max, new_min, new_max):
+#     """
+#     Map a value from one range to another using linear mapping.
 
-    Parameters:
-    - value: The original value to be mapped.
-    - old_min: The minimum value of the original range.
-    - old_max: The maximum value of the original range.
-    - new_min: The minimum value of the desired range.
-    - new_max: The maximum value of the desired range.
+#     Parameters:
+#     - value: The original value to be mapped.
+#     - old_min: The minimum value of the original range.
+#     - old_max: The maximum value of the original range.
+#     - new_min: The minimum value of the desired range.
+#     - new_max: The maximum value of the desired range.
 
-    Returns:
-    The mapped value in the new range.
-    """
-    old_range = old_max - old_min
-    new_range = new_max - new_min
+#     Returns:
+#     The mapped value in the new range.
+#     """
+#     old_range = old_max - old_min
+#     new_range = new_max - new_min
 
-    # Perform linear mapping
-    new_value = ((value - old_min) / old_range) * new_range + new_min
+#     # Perform linear mapping
+#     new_value = ((value - old_min) / old_range) * new_range + new_min
 
-    return new_value
+#     return new_value
 
 
 def saturate(value, minimum, maximum):
@@ -83,7 +84,7 @@ try:
                     y = saturate(event.value, -1, 1)
 
         displayTxData(x, y)
-        mapped_y2pwm = round(map_value(y, -1, 1, pwm0_min_DC, pwm0_max_DC))
+        mapped_y2pwm = round(cm.map_value(y, -1, 1, pwm0_min_DC, pwm0_max_DC))
         # Prepare motor speeds as a dictionary
         data_joyStick = {'x_axis': x, 'y_axis': y, 'servoPwm_yAxis': mapped_y2pwm}
 

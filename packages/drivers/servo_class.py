@@ -5,13 +5,23 @@ Created on Thu Jan 11 23:00:39 2024
 @author: clive
 """
 import pigpio
+from ..common_functions import common as cm
 
 class servoDriver:
-    def __init__(self, Smallest_pw, largest_pw, pin_pwm, freq=50):
+    def __init__(self, 
+                 Smallest_pw, 
+                 largest_pw, 
+                 pin_pwm, 
+                 old_low_rng=-90, 
+                 old_high_rng=90,
+                 freq=50):
+        
         self.Smallest_pw = Smallest_pw
         self.largest_pw = largest_pw
         self.freq = freq
         self.pin_pwm = pin_pwm
+        self.old_low_rng = old_low_rng
+        self.old_high_rng = old_high_rng
         
         self.pi = pigpio.pi()
         if not self.pi.connected:
@@ -20,8 +30,12 @@ class servoDriver:
         self.pi.set_mode(pin_pwm, pigpio.OUTPUT)
         
         
-    def getDuty(self,angle, old_low_rng, old_high_rng):
-        T_on = map_value(angle, old_low_rng, old_high_rng, self.Smallest_pw, self.largest_pw)
+    def getDuty(self,angle):
+        T_on = cm.map_value(angle, 
+                         self.old_low_rng, 
+                         self.old_high_rng, 
+                         self.Smallest_pw, 
+                         self.largest_pw)
         
         # Ensure the duty cycle is within the valid range [0, 1000000]
         duty_cycle = int(min(max(T_on * self.freq * 1e6, 0), 1000000))
@@ -38,29 +52,6 @@ class servoDriver:
     def killInstance(self):
         self.pi.hardware_PWM(self.pin_pwm, 0, 0)  # Stop PWM
         self.pi.stop()
-        
-
-def map_value(value, old_min, old_max, new_min, new_max):
-    """
-    Map a value from one range to another using linear mapping.
-
-    Parameters:
-    - value: The original value to be mapped.
-    - old_min: The minimum value of the original range.
-    - old_max: The maximum value of the original range.
-    - new_min: The minimum value of the desired range.
-    - new_max: The maximum value of the desired range.
-
-    Returns:
-    The mapped value in the new range.
-    """
-    old_range = old_max - old_min
-    new_range = new_max - new_min
-
-    # Perform linear mapping
-    new_value = ((value - old_min) / old_range) * new_range + new_min
-
-    return new_value    
         
     
 if __name__ == "__main__":

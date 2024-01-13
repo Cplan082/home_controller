@@ -2,14 +2,24 @@ import bluetooth
 import pickle
 import pigpio
 
+from ..packages.drivers import servo_class as sc
+
 
 gpio_pin = 18 # only GPIO 18 and 19 are supported on RPi zero W
+Smallest_pw = 1e-3
+largest_pw = 2e-3
 pwm_freq = int(1e6)
 
 # Client configuration
 client_socket = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
 server_address = "DC:A6:32:9C:1C:F5" # RPI4's bluetooth Address
 port = 1 #Bluetooth port. Must match port used by server
+
+servo1 = sc.servoDriver(Smallest_pw, 
+                        largest_pw, 
+                        gpio_pin, 
+                        old_low_rng=-1, 
+                        old_high_rng=1)
 
 pi = pigpio.pi()
 if not pi.connected:
@@ -31,7 +41,8 @@ try:
         x = data_joyStick['x_axis']
         y = data_joyStick['y_axis']
         mapped_y2pwm = data_joyStick['servoPwm_yAxis']
-        pi.hardware_PWM(gpio_pin, pwm_freq, mapped_y2pwm)
+        servo1.driveServo(y)
+        # pi.hardware_PWM(gpio_pin, pwm_freq, mapped_y2pwm)
         
         # Process the received motor speeds data
         print(f"Received Joystick Info: \n")
