@@ -2,7 +2,7 @@ import pygame
 import pickle
 import bluetooth
 import time
-from ..common import common as cm
+from ..packages.common_functions import common as cm
 
 # Initialize pygame
 pygame.init()
