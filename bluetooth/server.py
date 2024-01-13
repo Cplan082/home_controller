@@ -2,6 +2,15 @@ import pygame
 import pickle
 import bluetooth
 import time
+
+import sys
+import os
+
+# Add the parent directory to sys.path
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.abspath(os.path.join(current_dir, '..'))
+sys.path.append(parent_dir)
+
 from packages.common_functions import common as cm
 
 # Initialize pygame
