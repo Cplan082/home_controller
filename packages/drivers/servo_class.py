@@ -45,7 +45,7 @@ class servoDriver:
         
         
     def driveServo(self, angle):
-        duty_cycle = self.getDuty(self,angle)
+        duty_cycle = self.getDuty(angle)
         self.pi.hardware_PWM(self.pin_pwm, self.freq, duty_cycle)
 
         
