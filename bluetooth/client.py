@@ -2,7 +2,7 @@ import bluetooth
 import pickle
 import pigpio
 
-from ..packages.drivers import servo_class as sc
+from packages.drivers import servo_class as sc
 
 
 gpio_pin = 18 # only GPIO 18 and 19 are supported on RPi zero W
