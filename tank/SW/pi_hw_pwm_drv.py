@@ -31,7 +31,6 @@ class piHwPwmDriver:
         """
         print(f'Killing PWM{self.pwm_no}\n')
         self.pi.hardware_PWM(self.pin, 0, 0)  # Stop PWM
-        self.pi.stop()
         print(f'PWM{self.pwm_no} has been killed\n\n')
         
 
@@ -69,3 +68,4 @@ if __name__ == "__main__":
         # Stop PWM and disconnect from pigpio daemon
         obj_pwm0.killInstance()
         obj_pwm1.killInstance()
+        pi.stop()
