@@ -12,11 +12,12 @@ import common as cm
 class piHwPwmDriver:
     dict_pwmPins = {"0": [18, 12],
                     "1": [19, 13]}
-    def __init__(self, pi, pwm_no):
+    def __init__(self, pi, pwm_no, freq):
         self.pin = piHwPwmDriver.dict_pwmPins[pwm_no][0]
         # Connect to pigpio daemon
         self.pi = pi
         self.pi.set_mode(self.pin, pigpio.OUTPUT)
+        self.freq = freq
         
         
     def setDuty(self, duty_cycle):
@@ -35,8 +36,10 @@ if __name__ == "__main__":
     pi = pigpio.pi()
     if not pi.connected:
         exit()  # Exit if connection to pigpio daemon fails
-    obj_pwm0 =  piHwPwmDriver(pi, '0')
-    obj_pwm1 =  piHwPwmDriver(pi, '1')
+        
+    freq = 50
+    obj_pwm0 =  piHwPwmDriver(pi, '0', freq)
+    obj_pwm1 =  piHwPwmDriver(pi, '1', freq)
     
     try:
         duty0 = 0
