@@ -20,13 +20,13 @@ class piHwPwmDriver:
         
         
     def setDuty(self, duty_cycle):
-        self.pi.hardware_PWM(self.pin_pwm, self.freq, int(duty_cycle*1e6))
+        self.pi.hardware_PWM(self.pin, self.freq, int(duty_cycle*1e6))
     
     def killInstance(self):
         """
         Stop PWM and disconnect from pigpio daemon.
         """
-        self.pi.hardware_PWM(self.pin_pwm, 0, 0)  # Stop PWM
+        self.pi.hardware_PWM(self.pin, 0, 0)  # Stop PWM
         self.pi.stop()
         
 
