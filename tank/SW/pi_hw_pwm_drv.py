@@ -6,7 +6,7 @@ Created on Thu Jan 25 20:40:18 2024
 """
 
 import pigpio
-from ..common_functions import common as cm
+from ...packages.common_functions import common as cm
 
 class piHwPwmDriver:
     dict_pwmPins = {"0": [18, 12],
