@@ -15,7 +15,7 @@ class piHwPwmDriver:
     def __init__(self, pi, pwm_no, freq):
         self.pin = piHwPwmDriver.dict_pwmPins[pwm_no][0]
         self.pwm_no = int(pwm_no)
-        print(f"initalizing PWM{self.pwm_no} on pin {self.pin}\n")
+        print(f"initalizing PWM{self.pwm_no} on pin {self.pin}\n\n")
         # Connect to pigpio daemon
         self.pi = pi
         self.pi.set_mode(self.pin, pigpio.OUTPUT)
@@ -29,9 +29,10 @@ class piHwPwmDriver:
         """
         Stop PWM and disconnect from pigpio daemon.
         """
+        print(f'Killing PWM{self.pwm_no}\n')
         self.pi.hardware_PWM(self.pin, 0, 0)  # Stop PWM
         self.pi.stop()
-        print(f'PWM{self.pwm_no} has been killed\n')
+        print(f'PWM{self.pwm_no} has been killed\n\n')
         
 
 if __name__ == "__main__":
