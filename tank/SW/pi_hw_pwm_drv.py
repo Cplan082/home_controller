@@ -6,10 +6,9 @@ Created on Thu Jan 25 20:40:18 2024
 """
 
 import pigpio
-# from ...packages.common_functions import common as cm
-import common as cm
 
 class piHwPwmDriver:
+    piHwPwmMaxVal = 1e6
     dict_pwmPins = {"0": [18, 12],
                     "1": [19, 13]}
     def __init__(self, pi, pwm_no, freq):
@@ -23,15 +22,15 @@ class piHwPwmDriver:
         
         
     def setDuty(self, duty_cycle):
-        self.pi.hardware_PWM(self.pin, self.freq, int(duty_cycle*1e6))
+        self.pi.hardware_PWM(self.pin, self.freq, int(duty_cycle*piHwPwmDriver.piHwPwmMaxVal))
     
-    def killInstance(self):
+    def stopPwm(self):
         """
         Stop PWM and disconnect from pigpio daemon.
         """
-        print(f'Killing PWM{self.pwm_no}\n')
+        print(f'Stoping PWM{self.pwm_no}\n')
         self.pi.hardware_PWM(self.pin, 0, 0)  # Stop PWM
-        print(f'PWM{self.pwm_no} has been killed\n\n')
+        print(f'PWM{self.pwm_no} has stoped\n\n')
         
 
 if __name__ == "__main__":
@@ -66,6 +65,6 @@ if __name__ == "__main__":
         
     finally:
         # Stop PWM and disconnect from pigpio daemon
-        obj_pwm0.killInstance()
-        obj_pwm1.killInstance()
+        obj_pwm0.stopPwm()
+        obj_pwm1.stopPwm()
         pi.stop()
