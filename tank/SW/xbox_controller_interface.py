@@ -108,3 +108,57 @@ class XboxControllerInterface:
             self.dict_controllerStatus[self.dict_buttonMapping["L_TRIGGER"]] = value
         elif button == 9:
             self.dict_controllerStatus[self.dict_buttonMapping["R_TRIGGER"]] = value
+            
+            
+    def killInstance(self):
+        """
+        Kills the Xbox controller and pygame instance.
+        """
+        # Kill the pygame instance
+        self.pygame.quit()
+
+
+if __name__ == "__main__":
+    dict_buttonMapping ={"A_BUTTON": "A_BUTTON",
+                         "B_BUTTON": "B_BUTTON",
+                         "X_BUTTON": "X_BUTTON",
+                         "Y_BUTTON": "Y_BUTTON",
+                         "L_BUMPER": "L_BUMPER",
+                         "R_BUMPER": "R_BUMPER",
+                         "BACK_BUTTON": "BACK_BUTTON",
+                         "START_BUTTON": "START_BUTTON",
+                         "L_TRIGGER": "L_TRIGGER",
+                         "R_TRIGGER": "R_TRIGGER",
+                         "L_JOYSTICK_X": "L_JOYSTICK_X",
+                         "L_JOYSTICK_Y": "L_JOYSTICK_Y",
+                         "R_JOYSTICK_X": "R_JOYSTICK_X",
+                         "R_JOYSTICK_Y": "R_JOYSTICK_Y",
+                         }
+    
+    obj = XboxControllerInterface(dict_buttonMapping)
+    
+    try:
+        while(True):
+            obj.update_controllerStatus()
+            print("\n===========================================\n")
+            print(f"\tA_BUTTON = {A_BUTTON}\n")
+            print(f"\tB_BUTTON = {B_BUTTON}\n")
+            print(f"\tX_BUTTON = {X_BUTTON}\n")
+            print(f"\tY_BUTTON = {Y_BUTTON}\n")
+            print(f"\tL_BUMPER = {L_BUMPER}\n")
+            print(f"\tR_BUMPER = {R_BUMPER}\n")
+            print(f"\tBACK_BUTTON = {BACK_BUTTON}\n")
+            print(f"\tSTART_BUTTON = {START_BUTTON}\n")
+            print(f"\tL_TRIGGER = {L_TRIGGER}\n")
+            print(f"\tR_TRIGGER = {R_TRIGGER}\n")
+            print(f"\tL_JOYSTICK_X = {L_JOYSTICK_X}\n")
+            print(f"\tL_JOYSTICK_Y = {L_JOYSTICK_Y}\n")
+            print(f"\tR_JOYSTICK_X = {R_JOYSTICK_X}\n")
+            print(f"\tR_JOYSTICK_Y = {R_JOYSTICK_Y}\n")
+            print("\n\n")
+            
+    except KeyboardInterrupt:
+        print("Controller terminated by user.")
+    
+    finally:
+        obj.killInstance()
