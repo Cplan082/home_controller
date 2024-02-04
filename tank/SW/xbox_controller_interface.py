@@ -27,10 +27,10 @@ class XboxControllerInterface:
             dict_buttonMapping (dict): Dictionary mapping button names to pygame constants.
         """
         # Initialize pygame
-        self.pygame = pygame.init()
+        pygame.init()
 
         # Create an instance for the Xbox controller
-        self.controller = self.pygame.joystick.Joystick(0)
+        self.controller = pygame.joystick.Joystick(0)
 
         # Initialize the Xbox controller
         self.controller.init()
@@ -61,9 +61,9 @@ class XboxControllerInterface:
         Updates the status of the mapped buttons based on the events in the event queue.
         """
         # Iterate over all events in the event queue
-        for event in self.pygame.event.get():
+        for event in pygame.event.get():
             # Check if the event is a joystick axis motion
-            if event.type == self.pygame.JOYAXISMOTION:
+            if event.type == pygame.JOYAXISMOTION:
                 # Update the corresponding status in the dictionary based on the axis
                 if event.axis == 0:
                     self.dict_controllerStatus[self.dict_buttonMapping["L_JOYSTICK_X"]] = event.value
@@ -74,10 +74,10 @@ class XboxControllerInterface:
                 elif event.axis == 3:
                     self.dict_controllerStatus[self.dict_buttonMapping["R_JOYSTICK_Y"]] = event.value
 
-            elif event.type == self.pygame.JOYBUTTONDOWN:
+            elif event.type == pygame.JOYBUTTONDOWN:
                 self.update_buttons(event.button, True)
 
-            elif event.type == self.pygame.JOYBUTTONUP:
+            elif event.type == pygame.JOYBUTTONUP:
                 self.update_buttons(event.button, False)
 
     def update_buttons(self, button, value):
@@ -115,7 +115,7 @@ class XboxControllerInterface:
         Kills the Xbox controller and pygame instance.
         """
         # Kill the pygame instance
-        self.pygame.quit()
+        pygame.quit()
 
 
 if __name__ == "__main__":
