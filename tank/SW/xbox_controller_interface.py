@@ -27,7 +27,7 @@ class XboxControllerInterface:
             dict_buttonMapping (dict): Dictionary mapping button names to pygame constants.
         """
         # Initialize pygame
-        self.pygame.init()
+        self.pygame = pygame.init()
 
         # Create an instance for the Xbox controller
         self.controller = self.pygame.joystick.Joystick(0)
