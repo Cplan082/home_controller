@@ -1,16 +1,19 @@
-<mxfile host="Electron" modified="2024-01-27T03:25:23.905Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.21 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="VYuFu7Fj2CDwXnw6XsZH" version="22.1.21" type="device">
+<mxfile host="Electron" modified="2024-02-03T06:42:07.146Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.0.2 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="x7lIywhhR4QEEaOYXoud" version="23.0.2" type="device">
   <diagram name="Page-1" id="CexEC6ow1VSO5VtE6Au_">
-    <mxGraphModel dx="1420" dy="821" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="834" dy="1684" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="KhD5GfdqzPic-pQhPlFO-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#60a917;strokeColor=#2D7600;" edge="1" parent="1" source="_01hCskPj3Q0tYz4RAGB-1" target="KhD5GfdqzPic-pQhPlFO-8">
+        <mxCell id="eirMXrIWzCI2B4Xajuod-4" value="Xbox controller interface" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0000FF;" vertex="1" parent="1">
+          <mxGeometry x="1009" y="200" width="320" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="KhD5GfdqzPic-pQhPlFO-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#60a917;strokeColor=#FFFFFF;" parent="1" source="_01hCskPj3Q0tYz4RAGB-1" target="KhD5GfdqzPic-pQhPlFO-8" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="_01hCskPj3Q0tYz4RAGB-1" value="&lt;font style=&quot;font-size: 23px;&quot;&gt;Start&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="379" y="90" width="122" height="30" as="geometry" />
+        <mxCell id="_01hCskPj3Q0tYz4RAGB-1" value="&lt;font style=&quot;font-size: 23px;&quot;&gt;Start (Tank)&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="359.5" y="70" width="161" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="KhD5GfdqzPic-pQhPlFO-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KhD5GfdqzPic-pQhPlFO-2">
+        <mxCell id="KhD5GfdqzPic-pQhPlFO-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="KhD5GfdqzPic-pQhPlFO-2" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="440" y="160" as="targetPoint" />
             <Array as="points">
@@ -19,16 +22,16 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="KhD5GfdqzPic-pQhPlFO-2" value="L298N Driver" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;" vertex="1" parent="1">
+        <mxCell id="KhD5GfdqzPic-pQhPlFO-2" value="L298N Driver" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;" parent="1" vertex="1">
           <mxGeometry x="280" y="580" width="340" height="180" as="geometry" />
         </mxCell>
-        <mxCell id="KhD5GfdqzPic-pQhPlFO-1" value="PWM Driver" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
+        <mxCell id="KhD5GfdqzPic-pQhPlFO-1" value="PWM Driver" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="1" vertex="1">
           <mxGeometry x="280" y="700" width="131" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="KhD5GfdqzPic-pQhPlFO-3" value="PWM Driver" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
+        <mxCell id="KhD5GfdqzPic-pQhPlFO-3" value="PWM Driver" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="1" vertex="1">
           <mxGeometry x="489" y="700" width="131" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="KhD5GfdqzPic-pQhPlFO-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="KhD5GfdqzPic-pQhPlFO-4" target="KhD5GfdqzPic-pQhPlFO-1">
+        <mxCell id="KhD5GfdqzPic-pQhPlFO-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" parent="1" source="KhD5GfdqzPic-pQhPlFO-4" target="KhD5GfdqzPic-pQhPlFO-1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="251" y="660" />
@@ -36,7 +39,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="KhD5GfdqzPic-pQhPlFO-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;dashed=1;" edge="1" parent="1" source="KhD5GfdqzPic-pQhPlFO-4" target="KhD5GfdqzPic-pQhPlFO-3">
+        <mxCell id="KhD5GfdqzPic-pQhPlFO-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;dashed=1;" parent="1" source="KhD5GfdqzPic-pQhPlFO-4" target="KhD5GfdqzPic-pQhPlFO-3" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="251" y="660" />
@@ -44,37 +47,84 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="KhD5GfdqzPic-pQhPlFO-4" value="PiGPIO Dameon" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="KhD5GfdqzPic-pQhPlFO-4" value="PiGPIO Dameon" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="620" width="121" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="KhD5GfdqzPic-pQhPlFO-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="KhD5GfdqzPic-pQhPlFO-17" target="KhD5GfdqzPic-pQhPlFO-25">
+        <mxCell id="KhD5GfdqzPic-pQhPlFO-13" value="Comms Interface" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;align=left;" parent="1" vertex="1">
+          <mxGeometry x="260" y="200" width="370" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="KhD5GfdqzPic-pQhPlFO-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="KhD5GfdqzPic-pQhPlFO-8" target="KhD5GfdqzPic-pQhPlFO-17" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="KhD5GfdqzPic-pQhPlFO-15" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;X and Y Coordinates of Joystick&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KhD5GfdqzPic-pQhPlFO-14">
-          <mxGeometry x="-0.2156" y="2" relative="1" as="geometry">
-            <mxPoint as="offset" />
+        <mxCell id="KhD5GfdqzPic-pQhPlFO-8" value="Bluetooth (Client)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" parent="1" vertex="1">
+          <mxGeometry x="318.63" y="200" width="251.37" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="KhD5GfdqzPic-pQhPlFO-17" value="Update button/joystick/trigger status" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;" parent="1" vertex="1">
+          <mxGeometry x="384.31" y="290" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KhD5GfdqzPic-pQhPlFO-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="KhD5GfdqzPic-pQhPlFO-25" target="KhD5GfdqzPic-pQhPlFO-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KhD5GfdqzPic-pQhPlFO-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="KhD5GfdqzPic-pQhPlFO-25" target="KhD5GfdqzPic-pQhPlFO-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KhD5GfdqzPic-pQhPlFO-25" value="Set mmotor directions and speeds" style="whiteSpace=wrap;html=1;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" parent="1" vertex="1">
+          <mxGeometry x="401" y="590" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="eirMXrIWzCI2B4Xajuod-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="KhD5GfdqzPic-pQhPlFO-29" target="KhD5GfdqzPic-pQhPlFO-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KhD5GfdqzPic-pQhPlFO-29" value="Convert from x andY Joystick coords to vector_a/b (vectors for both motors)" style="whiteSpace=wrap;html=1;fillColor=#fa6800;strokeColor=#C73500;fontColor=#000000;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="385" y="390" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KhD5GfdqzPic-pQhPlFO-31" value="Comms_interface block &lt;br&gt;decouples comms protocol &lt;br&gt;and controller type (xbox or app, etc) &lt;br&gt;from the rest of the code" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="630" y="255" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="eirMXrIWzCI2B4Xajuod-2" value="Bluetooth (Server)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="550" width="267.94" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="eirMXrIWzCI2B4Xajuod-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="eirMXrIWzCI2B4Xajuod-3" target="eirMXrIWzCI2B4Xajuod-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eirMXrIWzCI2B4Xajuod-3" value="&lt;font style=&quot;font-size: 23px;&quot;&gt;Start (Hub)&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1088.5" y="70" width="161" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="eirMXrIWzCI2B4Xajuod-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="eirMXrIWzCI2B4Xajuod-7" target="eirMXrIWzCI2B4Xajuod-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1074" y="370" />
+              <mxPoint x="1164" y="370" />
+            </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="KhD5GfdqzPic-pQhPlFO-13" value="Controller" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="1">
-          <mxGeometry x="260" y="200" width="370" height="180" as="geometry" />
+        <mxCell id="eirMXrIWzCI2B4Xajuod-7" value="Dict Tank controls (x/y coords, button presses, etc.)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#FF33FF;" vertex="1" parent="1">
+          <mxGeometry x="1018.5" y="210" width="111.5" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="KhD5GfdqzPic-pQhPlFO-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KhD5GfdqzPic-pQhPlFO-8" target="KhD5GfdqzPic-pQhPlFO-17">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="eirMXrIWzCI2B4Xajuod-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="eirMXrIWzCI2B4Xajuod-8" target="KhD5GfdqzPic-pQhPlFO-29">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="319" y="440" />
+              <mxPoint x="369" y="440" />
+              <mxPoint x="369" y="380" />
+              <mxPoint x="445" y="380" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="KhD5GfdqzPic-pQhPlFO-8" value="Bluetooth" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" vertex="1" parent="1">
-          <mxGeometry x="355.25" y="200" width="169.5" height="50" as="geometry" />
+        <mxCell id="eirMXrIWzCI2B4Xajuod-8" value="Dict Tank controls" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#FF33FF;" vertex="1" parent="1">
+          <mxGeometry x="290" y="360" width="58.63" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="KhD5GfdqzPic-pQhPlFO-17" value="Update button/joystick/trigger status" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;" vertex="1" parent="1">
-          <mxGeometry x="379" y="310" width="120" height="60" as="geometry" />
+        <mxCell id="eirMXrIWzCI2B4Xajuod-13" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Vector_a/b&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="450" y="530.0040484624001" as="geometry" />
         </mxCell>
-        <mxCell id="KhD5GfdqzPic-pQhPlFO-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="KhD5GfdqzPic-pQhPlFO-25" target="KhD5GfdqzPic-pQhPlFO-1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="KhD5GfdqzPic-pQhPlFO-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="KhD5GfdqzPic-pQhPlFO-25" target="KhD5GfdqzPic-pQhPlFO-3">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="KhD5GfdqzPic-pQhPlFO-25" value="Set mmotor directions and speeds" style="whiteSpace=wrap;html=1;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" vertex="1" parent="1">
-          <mxGeometry x="401" y="590" width="100" height="40" as="geometry" />
+        <mxCell id="eirMXrIWzCI2B4Xajuod-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KhD5GfdqzPic-pQhPlFO-17" target="eirMXrIWzCI2B4Xajuod-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="444" y="360" />
+              <mxPoint x="364" y="360" />
+              <mxPoint x="364" y="340" />
+              <mxPoint x="319" y="340" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>

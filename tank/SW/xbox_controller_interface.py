@@ -119,6 +119,8 @@ class XboxControllerInterface:
 
 
 if __name__ == "__main__":
+    import time
+    
     dict_buttonMapping ={"A_BUTTON": "A_BUTTON",
                          "B_BUTTON": "B_BUTTON",
                          "X_BUTTON": "X_BUTTON",
@@ -141,21 +143,22 @@ if __name__ == "__main__":
         while(True):
             obj.update_controllerStatus()
             print("\n===========================================\n")
-            print(f"\tA_BUTTON = {A_BUTTON}\n")
-            print(f"\tB_BUTTON = {B_BUTTON}\n")
-            print(f"\tX_BUTTON = {X_BUTTON}\n")
-            print(f"\tY_BUTTON = {Y_BUTTON}\n")
-            print(f"\tL_BUMPER = {L_BUMPER}\n")
-            print(f"\tR_BUMPER = {R_BUMPER}\n")
-            print(f"\tBACK_BUTTON = {BACK_BUTTON}\n")
-            print(f"\tSTART_BUTTON = {START_BUTTON}\n")
-            print(f"\tL_TRIGGER = {L_TRIGGER}\n")
-            print(f"\tR_TRIGGER = {R_TRIGGER}\n")
-            print(f"\tL_JOYSTICK_X = {L_JOYSTICK_X}\n")
-            print(f"\tL_JOYSTICK_Y = {L_JOYSTICK_Y}\n")
-            print(f"\tR_JOYSTICK_X = {R_JOYSTICK_X}\n")
-            print(f"\tR_JOYSTICK_Y = {R_JOYSTICK_Y}\n")
+            print(f"\tA_BUTTON     = {obj.dict_controllerStatus['A_BUTTON']}\n")
+            print(f"\tB_BUTTON     = {obj.dict_controllerStatus['B_BUTTON']}\n")
+            print(f"\tX_BUTTON     = {obj.dict_controllerStatus['X_BUTTON']}\n")
+            print(f"\tY_BUTTON     = {obj.dict_controllerStatus['Y_BUTTON']}\n")
+            print(f"\tL_BUMPER     = {obj.dict_controllerStatus['L_BUMPER']}\n")
+            print(f"\tR_BUMPER     = {obj.dict_controllerStatus['R_BUMPER']}\n")
+            print(f"\tBACK_BUTTON  = {obj.dict_controllerStatus['BACK_BUTTON']}\n")
+            print(f"\tSTART_BUTTON = {obj.dict_controllerStatus['START_BUTTON']}\n")
+            print(f"\tL_TRIGGER    = {obj.dict_controllerStatus['L_TRIGGER']}\n")
+            print(f"\tR_TRIGGER    = {obj.dict_controllerStatus['R_TRIGGER']}\n")
+            print(f"\tL_JOYSTICK_X = {obj.dict_controllerStatus['L_JOYSTICK_X']}\n")
+            print(f"\tL_JOYSTICK_Y = {obj.dict_controllerStatus['L_JOYSTICK_Y']}\n")
+            print(f"\tR_JOYSTICK_X = {obj.dict_controllerStatus['R_JOYSTICK_X']}\n")
+            print(f"\tR_JOYSTICK_Y = {obj.dict_controllerStatus['R_JOYSTICK_Y']}\n")
             print("\n\n")
+            time.sleep(0.1)  # Adjust delay as needed
             
     except KeyboardInterrupt:
         print("Controller terminated by user.")
