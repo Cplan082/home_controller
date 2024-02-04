@@ -44,14 +44,16 @@ class XboxControllerInterface:
             dict_buttonMapping["L_JOYSTICK_Y"]: 0,
             dict_buttonMapping["R_JOYSTICK_X"]: 0,
             dict_buttonMapping["R_JOYSTICK_Y"]: 0,
+            dict_buttonMapping["L_TRIGGER"]: -1,
+            dict_buttonMapping["R_TRIGGER"]: -1,
             dict_buttonMapping["B_BUTTON"]: False,
             dict_buttonMapping["A_BUTTON"]: False,
             dict_buttonMapping["Y_BUTTON"]: False,
             dict_buttonMapping["X_BUTTON"]: False,
             dict_buttonMapping["START_BUTTON"]: False,
             dict_buttonMapping["BACK_BUTTON"]: False,
-            dict_buttonMapping["L_TRIGGER"]: False,
-            dict_buttonMapping["R_TRIGGER"]: False,
+            dict_buttonMapping["R_JOYSTICK_BUTTON"]: False,
+            dict_buttonMapping["L_JOYSTICK_BUTTON"]: False,
             dict_buttonMapping["L_BUMPER"]: False,
             dict_buttonMapping["R_BUMPER"]: False,
         }
@@ -69,10 +71,16 @@ class XboxControllerInterface:
                     self.dict_controllerStatus[self.dict_buttonMapping["L_JOYSTICK_X"]] = event.value
                 elif event.axis == 1:
                     self.dict_controllerStatus[self.dict_buttonMapping["L_JOYSTICK_Y"]] = event.value
-                elif event.axis == 2:
-                    self.dict_controllerStatus[self.dict_buttonMapping["R_JOYSTICK_X"]] = event.value
                 elif event.axis == 3:
+                    self.dict_controllerStatus[self.dict_buttonMapping["R_JOYSTICK_X"]] = event.value
+                elif event.axis == 4:
                     self.dict_controllerStatus[self.dict_buttonMapping["R_JOYSTICK_Y"]] = event.value
+                elif event.axis == 2:
+                    # Update the left trigger status
+                    self.dict_controllerStatus[self.dict_buttonMapping["L_TRIGGER"]] = event.value
+                elif event.axis == 5:
+                    # Update the right trigger status
+                    self.dict_controllerStatus[self.dict_buttonMapping["R_TRIGGER"]] = event.value
 
             elif event.type == pygame.JOYBUTTONDOWN:
                 self.update_buttons(event.button, True)
@@ -105,9 +113,9 @@ class XboxControllerInterface:
         elif button == 7:
             self.dict_controllerStatus[self.dict_buttonMapping["START_BUTTON"]] = value
         elif button == 8:
-            self.dict_controllerStatus[self.dict_buttonMapping["L_TRIGGER"]] = value
+            self.dict_controllerStatus[self.dict_buttonMapping["L_JOYSTICK_BUTTON"]] = value
         elif button == 9:
-            self.dict_controllerStatus[self.dict_buttonMapping["R_TRIGGER"]] = value
+            self.dict_controllerStatus[self.dict_buttonMapping["R_JOYSTICK_BUTTON"]] = value
             
             
     def killInstance(self):
@@ -135,6 +143,8 @@ if __name__ == "__main__":
                          "L_JOYSTICK_Y": "L_JOYSTICK_Y",
                          "R_JOYSTICK_X": "R_JOYSTICK_X",
                          "R_JOYSTICK_Y": "R_JOYSTICK_Y",
+                         "R_JOYSTICK_BUTTON": "R_JOYSTICK_BUTTON",
+                         "L_JOYSTICK_BUTTON": "L_JOYSTICK_BUTTON",
                          }
     
     obj = XboxControllerInterface(dict_buttonMapping)
@@ -157,8 +167,11 @@ if __name__ == "__main__":
             print(f"\tL_JOYSTICK_Y = {obj.dict_controllerStatus['L_JOYSTICK_Y']}\n")
             print(f"\tR_JOYSTICK_X = {obj.dict_controllerStatus['R_JOYSTICK_X']}\n")
             print(f"\tR_JOYSTICK_Y = {obj.dict_controllerStatus['R_JOYSTICK_Y']}\n")
+            print(f"\tL_JOYSTICK_BUTTON = {obj.dict_controllerStatus['L_JOYSTICK_BUTTON']}\n")
+            print(f"\tR_JOYSTICK_BUTTON = {obj.dict_controllerStatus['R_JOYSTICK_BUTTON']}\n")
+            
             print("\n\n")
-            time.sleep(0.1)  # Adjust delay as needed
+            time.sleep(1)  # Adjust delay as needed
             
     except KeyboardInterrupt:
         print("Controller terminated by user.")
