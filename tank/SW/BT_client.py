@@ -28,6 +28,7 @@ class client_BT:
         
 if __name__ == "__main__":
     import time
+    from mapping import dict_buttonMapping
     
     port = 1
     obj_client = client_BT(port)
@@ -48,8 +49,8 @@ if __name__ == "__main__":
                 print(f"\tSTART_BUTTON = {dict_controllerStatus['START_BUTTON']}\n")
                 print(f"\tL_TRIGGER    = {dict_controllerStatus['L_TRIGGER']}\n")
                 print(f"\tR_TRIGGER    = {dict_controllerStatus['R_TRIGGER']}\n")
-                print(f"\tL_JOYSTICK_X = {dict_controllerStatus['L_JOYSTICK_X']}\n")
-                print(f"\tL_JOYSTICK_Y = {dict_controllerStatus['L_JOYSTICK_Y']}\n")
+                print(f"\t{dict_buttonMapping['L_JOYSTICK_X']} = {dict_controllerStatus[dict_buttonMapping['L_JOYSTICK_X']]}\n")
+                print(f"\t{dict_buttonMapping['L_JOYSTICK_Y']} = {dict_controllerStatus[dict_buttonMapping['L_JOYSTICK_Y']]}\n")
                 print(f"\tR_JOYSTICK_X = {dict_controllerStatus['R_JOYSTICK_X']}\n")
                 print(f"\tR_JOYSTICK_Y = {dict_controllerStatus['R_JOYSTICK_Y']}\n")
                 print(f"\tL_JOYSTICK_BUTTON = {dict_controllerStatus['L_JOYSTICK_BUTTON']}\n")
