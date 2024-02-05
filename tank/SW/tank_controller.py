@@ -14,8 +14,8 @@ port = 1
 motor_freq = 50
 dict_pin_in = {'in1': 25,
                'in2': 8,
-               'in3': 7,
-               'in4': 1,
+               'in3': 1,
+               'in4': 21,
                }
 
 obj_client = btc.client_BT(port)
