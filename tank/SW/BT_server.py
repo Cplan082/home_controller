@@ -41,24 +41,7 @@ if __name__ == "__main__":
     import time
     import xbox_controller_interface as xci
     from mapping import dict_buttonMapping
-    
-    # dict_buttonMapping ={"A_BUTTON": "A_BUTTON",
-    #                      "B_BUTTON": "B_BUTTON",
-    #                      "X_BUTTON": "X_BUTTON",
-    #                      "Y_BUTTON": "Y_BUTTON",
-    #                      "L_BUMPER": "L_BUMPER",
-    #                      "R_BUMPER": "R_BUMPER",
-    #                      "BACK_BUTTON": "BACK_BUTTON",
-    #                      "START_BUTTON": "START_BUTTON",
-    #                      "L_TRIGGER": "L_TRIGGER",
-    #                      "R_TRIGGER": "R_TRIGGER",
-    #                      "L_JOYSTICK_X": "L_JOYSTICK_X",
-    #                      "L_JOYSTICK_Y": "L_JOYSTICK_Y",
-    #                      "R_JOYSTICK_X": "R_JOYSTICK_X",
-    #                      "R_JOYSTICK_Y": "R_JOYSTICK_Y",
-    #                      "R_JOYSTICK_BUTTON": "R_JOYSTICK_BUTTON",
-    #                      "L_JOYSTICK_BUTTON": "L_JOYSTICK_BUTTON",
-    #                      }
+
     port = 1
     
     obj_xbc = xci.XboxControllerInterface(dict_buttonMapping)

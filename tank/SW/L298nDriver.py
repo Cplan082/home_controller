@@ -35,10 +35,10 @@ class L298nDriver:
         for value in dict_pin_in.values():
             self.pi.set_mode(value, pigpio.OUTPUT)
     
-    def drive_motors(self, x, y):
-        # Calculate vectors for each motor based on input parameters
-        vector_a = y + x
-        vector_b = y - x
+    def drive_motors(self, vector_a, vector_b):
+        # # Calculate vectors for each motor based on input parameters
+        # vector_a = y + x
+        # vector_b = y - x
         
         # Update motor directions
         self.update_direction(vector_a, vector_b)
@@ -89,3 +89,11 @@ class L298nDriver:
         # Stop PWM for both motors to shut down the motors
         self.pwmDrv_a.stopPwm()
         self.pwmDrv_b.stopPwm()
+        
+        
+if __name__ == "__main__":
+    pass
+    # dict_pin_in = {"in1": ,
+    #                "in2": ,
+    #                "in3": ,
+    #                "in4": }
