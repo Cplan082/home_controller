@@ -11,7 +11,7 @@ from L298nDriver import L298nDriver
 from mapping import dict_buttonMapping
 
 port = 1
-motor_freq = 50
+motor_pwm_freq = 50
 dict_pin_in = {'in1': 23,
                'in2': 24,
                'in3': 6,
@@ -24,7 +24,7 @@ pi = pigpio.pi()
 if not pi.connected:
     exit()  # Exit if connection to pigpio daemon fails
     
-obj_L298nDriver = L298nDriver(pi, dict_pin_in, motor_freq, invert_a=False, invert_b=False)
+obj_L298nDriver = L298nDriver(pi, dict_pin_in, motor_pwm_freq, invert_a=False, invert_b=False)
 
 try:
     while True:
