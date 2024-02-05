@@ -33,6 +33,7 @@ class L298nDriver:
         
         # Configure GPIO pins as outputs
         for value in dict_pin_in.values():
+            print(f"value = {value}\n")
             self.pi.set_mode(value, pigpio.OUTPUT)
     
     def drive_motors(self, vector_a, vector_b):
