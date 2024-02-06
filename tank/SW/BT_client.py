@@ -10,7 +10,8 @@ import bluetooth
 from BT_base_class import BT_base
 
 class BT_client(BT_base):
-    def __init__(self, port, server_address="DC:A6:32:9C:1C:F5"):
+    def __init__(self, port, server_address="DC:A6:32:9C:1C:F5", rx_data_size_inBytes=1024):
+        self.rx_data_size_inBytes = rx_data_size_inBytes
         super().__init__(port, server_address)
         
         

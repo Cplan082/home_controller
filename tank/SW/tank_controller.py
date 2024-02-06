@@ -18,7 +18,7 @@ dict_pin_in = {'in1': 23,
                'in4': 26,
                }
 
-obj_client = btc.client_BT(port)
+obj_client = btc.BT_client(port)
 
 pi = pigpio.pi()
 if not pi.connected:
