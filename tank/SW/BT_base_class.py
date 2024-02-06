@@ -36,31 +36,3 @@ class BT_base:
         
         
         
-class BT_client(BT_base):
-    def __init__(self, port, server_address="DC:A6:32:9C:1C:F5"):
-        super().__init__(port, server_address)
-        
-        
-
-class BT_server(BT_base):
-    def __init__(self, port):
-        super().__init__(port)
-        
-    def get_client_socket(self, port):
-        # Create a Bluetooth server socket using RFCOMM protocol
-        self.server_socket = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
-        
-        # Bind the server socket to the specified port and start listening
-        self.server_socket.bind(("", port))
-        self.server_socket.listen(1)
-        
-        # Print a message indicating that the server is waiting for a connection
-        print("Server waiting for connection...")
-
-        # Accept a connection from a client when available
-        self.client_socket, self.client_info = self.server_socket.accept()
-        print(f"Accepted connection from {self.client_info}")
-        
-    def killInstance(self):
-        super().killInstance()
-        self.server_socket.close() # Close the connection

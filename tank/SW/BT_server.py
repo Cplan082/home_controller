@@ -13,7 +13,7 @@ class BT_server(BT_base):
     def __init__(self, port):
         super().__init__(port)
         
-    def get_client_socket(self, port):
+    def get_client_socket(self, port, server_address):
         # Create a Bluetooth server socket using RFCOMM protocol
         self.server_socket = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
         
