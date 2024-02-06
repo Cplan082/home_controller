@@ -7,23 +7,11 @@ Created on Sun Feb  4 17:45:08 2024
 
 import pickle
 import bluetooth
+from BT_base_class import BT_base
 
-class client_BT:
-    def __init__(self, port, server_address="DC:A6:32:9C:1C:F5", rx_data_size_inBytes=1024):
-        self.rx_data_size_inBytes = rx_data_size_inBytes
-        self.client_socket = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
-        self.client_socket.connect((server_address, port))
-        
-    def listen(self):
-        serialized_data = self.client_socket.recv(self.rx_data_size_inBytes)
-        
-        if not serialized_data:
-            return None
-        
-        return pickle.loads(serialized_data)
-    
-    def killInstance(self):
-        self.client_socket.close() # Close the connection
+class BT_client(BT_base):
+    def __init__(self, port, server_address="DC:A6:32:9C:1C:F5"):
+        super().__init__(port, server_address)
         
         
 if __name__ == "__main__":
@@ -31,7 +19,7 @@ if __name__ == "__main__":
     from mapping import dict_buttonMapping
     
     port = 1
-    obj_client = client_BT(port)
+    obj_client = BT_client(port)
     
     try:    
         while True:
